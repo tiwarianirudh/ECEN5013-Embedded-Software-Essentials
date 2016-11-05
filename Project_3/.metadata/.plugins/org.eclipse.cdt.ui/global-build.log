@@ -1,0 +1,44 @@
+21:19:11 **** Incremental Build of configuration Debug for project project_3 ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'init_DMA1':
+../Sources/main.c:66:3: warning: implicit declaration of function 'initialize_counter' [-Wimplicit-function-declaration]
+   initialize_counter();
+   ^
+../Sources/main.c:67:5: warning: implicit declaration of function 'counter_start' [-Wimplicit-function-declaration]
+     counter_start();
+     ^
+../Sources/main.c:71:5: warning: implicit declaration of function 'counter_stop' [-Wimplicit-function-declaration]
+     counter_stop();
+     ^
+../Sources/main.c: At top level:
+../Sources/main.c:82:8: warning: conflicting types for 'initialize_counter' [enabled by default]
+   void initialize_counter()
+        ^
+../Sources/main.c:66:3: note: previous implicit declaration of 'initialize_counter' was here
+   initialize_counter();
+   ^
+../Sources/main.c:93:8: warning: conflicting types for 'counter_start' [enabled by default]
+   void counter_start()
+        ^
+../Sources/main.c:67:5: note: previous implicit declaration of 'counter_start' was here
+     counter_start();
+     ^
+../Sources/main.c:99:8: warning: conflicting types for 'counter_stop' [enabled by default]
+   void counter_stop()
+        ^
+../Sources/main.c:71:5: note: previous implicit declaration of 'counter_stop' was here
+     counter_stop();
+     ^
+Finished building: ../Sources/main.c
+ 
+Building target: project_3.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"C:/Users/aniru/Desktop/Project_3/project_3/Project_Settings/Linker_Files" -Wl,-Map,"project_3.map" -specs=nano.specs -specs=nosys.specs -o "project_3.elf"  ./Sources/main.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
+Finished building target: project_3.elf
+ 
+21:19:29 **** Incremental Build of configuration Debug for project project_3 ****
+make all 
+make: Nothing to be done for 'all'.
