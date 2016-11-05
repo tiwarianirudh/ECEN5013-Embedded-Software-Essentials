@@ -2574,3 +2574,33 @@
   <categories xmi:id="_VqpQkaMKEeavU4rWFTsVZA" elementId="org.eclipse.ltk.ui.category.refactoring" name="Refactoring"/>
   <categories xmi:id="_VqpQkqMKEeavU4rWFTsVZA" elementId="org.eclipse.ui.category.navigate" name="Navigate"/>
 </application:Application>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 .debug.ui.category.tracing" name="Tracing Commands" description="Category for Tracing Commands"/>
+  <categories xmi:id="_BlaorKMSEeavU4rWFTsVZA" elementId="ilg.gnuarmeclipse.debug.gdbjtag.restart.category" name="Run/Debug" description="Run/Debug command category"/>
+  <categories xmi:id="_BlaoraMSEeavU4rWFTsVZA" elementId="com.processorexpert.keybinding.perspective" name="Code Generation" description="Bring Processor Expert Views"/>
+  <categories xmi:id="_BlaorqMSEeavU4rWFTsVZA" elementId="org.eclipse.cdt.codan.ui.commands.category" name="Code Analysis"/>
+  <categories xmi:id="_Blaor6MSEeavU4rWFTsVZA" elementId="org.eclipse.linuxtools.changelog" name="Changelog" description="Changelog key bindings"/>
+  <categories xmi:id="_BlaosKMSEeavU4rWFTsVZA" elementId="org.eclipse.ui.ide.markerContents" name="Contents" description="The category for menu contents"/>
+  <categories xmi:id="_BlaosaMSEeavU4rWFTsVZA" elementId="com.somn.flash.commands.category" name="Flash Category"/>
+  <categories xmi:id="_BlaosqMSEeavU4rWFTsVZA" elementId="org.eclipse.ui.category.file" name="File"/>
+  <categories xmi:id="_Blaos6MSEeavU4rWFTsVZA" elementId="org.eclipse.linuxtools.tmf.ui.commands.category" name="Tracing" description="Tracing Commands"/>
+  <categories xmi:id="_BlaotKMSEeavU4rWFTsVZA" elementId="org.eclipse.debug.ui.category.run" name="Run/Debug" description="Run/Debug command category"/>
+  <categories xmi:id="_BlaotaMSEeavU4rWFTsVZA" elementId="org.eclipse.mylyn.tasks.ui.category.editor" name="Task Editor"/>
+  <categories xmi:id="_BlaotqMSEeavU4rWFTsVZA" elementId="org.eclipse.mylyn.cdt.ui.commands" name="CDT Context" description="CDT Task-Focused Interface Commands"/>
+  <categories xmi:id="_Blaot6MSEeavU4rWFTsVZA" elementId="com.processorexpert.ui.deviceinit.commands.category" name="Sample Category"/>
+  <categories xmi:id="_BlaouKMSEeavU4rWFTsVZA" elementId="org.eclipse.linuxtools.tmf.ui.views.uml2sd.category" name="UML2 Sequence Diagram Viewer Commands" description="UML2 Sequence Diagram Viewer Commands"/>
+  <categories xmi:id="_BlaouaMSEeavU4rWFTsVZA" elementId="org.eclipse.mylyn.wikitext.context.ui.commands" name="%commands.category.name" description="%commands.category.description"/>
+  <categories xmi:id="_BlaouqMSEeavU4rWFTsVZA" elementId="org.eclipse.ui.category.dialogs" name="Dialogs" description="Commands for opening dialogs"/>
+  <categories xmi:id="_Blaou6MSEeavU4rWFTsVZA" elementId="org.eclipse.cdt.debug.ui.category.debugViewLayout" name="Debug View Layout Commands" description="Set of commands for controlling the Debug View Layout"/>
+  <categories xmi:id="_BlaovKMSEeavU4rWFTsVZA" elementId="org.eclipse.ui.category.textEditor" name="Text Editing" description="Text Editing Commands"/>
+  <categories xmi:id="_BlaovaMSEeavU4rWFTsVZA" elementId="org.eclipse.mylyn.commons.repositories.ui.category.Team" name="Team"/>
+  <categories xmi:id="_BlaovqMSEeavU4rWFTsVZA" elementId="org.eclipse.mylyn.tasks.ui.commands" name="Task Repositories"/>
+  <categories xmi:id="_Blaov6MSEeavU4rWFTsVZA" elementId="org.eclipse.cdt.ui.category.source" name="Source" description="Source commands"/>
+  <categories xmi:id="_BlaowKMSEeavU4rWFTsVZA" elementId="org.eclipse.cdt.debug.ui.category.runControl" name="Run Control Commands" description="Set of commands for Run Control"/>
+  <categories xmi:id="_BlaowaMSEeavU4rWFTsVZA" elementId="rpmEditor.category" name="Editor Commands" description="Specfile Editor Commands"/>
+  <categories xmi:id="_BlaowqMSEeavU4rWFTsVZA" elementId="org.eclipse.ui.category.help" name="Help"/>
+  <categories xmi:id="_Blaow6MSEeavU4rWFTsVZA" elementId="org.eclipse.tm.terminal.category1" name="Terminal view commands" description="Terminal view commands"/>
+  <categories xmi:id="_BlaoxKMSEeavU4rWFTsVZA" elementId="org.eclipse.linuxtools.internal.lttng2.ui.commands.control.category" name="LTTng Trace Control Commands" description="LTTng Trace Control Commands"/>
+  <categories xmi:id="_BlaoxaMSEeavU4rWFTsVZA" elementId="org.eclipse.compare.ui.category.compare" name="Compare" description="Compare command category"/>
+  <categories xmi:id="_BlaoxqMSEeavU4rWFTsVZA" elementId="org.eclipse.ltk.ui.category.refactoring" name="Refactoring"/>
+  <categories xmi:id="_Blaox6MSEeavU4rWFTsVZA" elementId="org.eclipse.ui.category.navigate" name="Navigate"/>
+</application:Application>

@@ -27,18 +27,4 @@ arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-ch
      counter_start();
      ^
 ../Sources/main.c:99:8: warning: conflicting types for 'counter_stop' [enabled by default]
-   void counter_stop()
-        ^
-../Sources/main.c:71:5: note: previous implicit declaration of 'counter_stop' was here
-     counter_stop();
-     ^
-Finished building: ../Sources/main.c
- 
-Building target: project_3.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"C:/Users/aniru/Desktop/Project_3/project_3/Project_Settings/Linker_Files" -Wl,-Map,"project_3.map" -specs=nano.specs -specs=nosys.specs -o "project_3.elf"  ./Sources/main.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
-Finished building target: project_3.elf
- 
-21:19:29 **** Incremental Build of configuration Debug for project project_3 ****
-make all 
-make: Nothing to be done for 'all'.
+   void counter_stop
