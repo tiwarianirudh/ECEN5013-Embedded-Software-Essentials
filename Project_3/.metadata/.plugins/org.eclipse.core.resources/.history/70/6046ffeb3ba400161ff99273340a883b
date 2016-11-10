@@ -1,0 +1,64 @@
+/*
+ * dma.c
+ *
+ *  Created on: Nov 4, 2016
+ *      Author: aniru
+ */
+#include"MKL25Z4.h"
+#include<dma.h>
+#include<stdint.h>
+#include<profiler.h>
+
+
+/*void init_DMA1(void)
+{
+
+		SIM_SCGC6 |= SIM_SCGC6_DMAMUX_MASK;
+		SIM_SCGC7 |= SIM_SCGC7_DMA_MASK;
+
+		DMAMUX0_CHCFG0 |= 0X00;
+
+
+		DMA_DSR_BCR0 |= 0x20u;
+
+		DMA_DCR0 |= DMA_DCR_SSIZE(1) | DMA_DCR_DSIZE(1);
+		DMA_DCR0 |= DMA_DCR_SINC_MASK | DMA_DCR_DINC_MASK;
+
+		DMAMUX0_CHCFG0 |= 0x49u;
+		DMAMUX0_CHCFG0 |= DMAMUX_CHCFG_ENBL_MASK;
+
+ }*/
+
+void dma8(uint8_t *src, uint8_t *dst, uint32_t len)
+{
+	SIM_SCGC6 |= SIM_SCGC6_DMAMUX_MASK; //Enable clock to demux
+	SIM_SCGC7 |= SIM_SCGC7_DMA_MASK;	// Enable clock for DMA
+
+	DMAMUX0_CHCFG0 |= 0X00;	// Disabling DMA MUX channel
+
+	DMA_SAR0 = src;
+	DMA_DAR0 = dst;
+	DMA_DSR_BCR0 |= len; //Set number of bytes to be transferred
+
+	DMA_DCR0 &= ~(DMA_DCR_SSIZE_MASK | DMA_DCR_DSIZE_MASK); //clearing the source size, destination size fields
+	NVIC->ISER[0] = 0x1; //Enabling the device specific interrupt for DMA Channel0
+#if MEMZERO
+	DMA_DCR0 |= DMA_DCR_DINC_MASK; //Incrementing destination address after each successful transfer
+#else
+	DMA_DCR0 |= DMA_DCR_SINC_MASK //Incrementing source address after each successful transfer
+#endif
+
+
+	DMA_DCR0 |= DMA_DCR_EINT_MASK; //Enabling interrupt after successful operation
+	NVIC->ISER[0] = 0x1;
+	DMAMUX0_CHCFG0 |= DMAMUX_CHCFG_SOURCE(49);
+	DMAMUX0_CHCFG0 |= DMAMUX_CHCFG_ENBL_MASK;
+
+
+	initialize_counter();
+	counter_start();
+
+	DMA_DCR0 |= DMA_DCR_START_MASK;
+
+	counter_stop();
+}

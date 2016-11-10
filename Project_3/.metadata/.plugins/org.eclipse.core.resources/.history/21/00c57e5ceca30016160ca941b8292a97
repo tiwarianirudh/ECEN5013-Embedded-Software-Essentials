@@ -1,0 +1,23 @@
+/*
+ * messageint.c
+ *
+ *  Created on: Nov 4, 2016
+ *      Author: Mukund Madhusudan Atre
+ */
+#include "MKL25Z4.h"
+#include <stdint.h>
+#include "rxtestled.h"
+#include "messageint.h"
+
+//inptr = (uint8_t*)calloc(4,sizeof(uint8_t));
+
+
+/*void UART0_input(uint8_t i)
+{
+  uint8_t c;
+  c = UART0->D;
+  *(inptr+i) = c;
+}*/
+
+
+

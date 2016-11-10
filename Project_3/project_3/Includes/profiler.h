@@ -11,6 +11,7 @@
 void initialize_counter();
 void counter_start();
 void counter_stop();
+void TPM0_IRQHandler();
 
 
 #endif /* INCLUDES_PROFILER_H_ */

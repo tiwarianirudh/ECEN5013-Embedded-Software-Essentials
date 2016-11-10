@@ -1,0 +1,38 @@
+/*
+ * dma.c
+ *
+ *  Created on: Nov 4, 2016
+ *      Author: aniru
+ */
+#include"MKL25Z4.h"
+#include<dma.h>
+#include<profiler.h>
+void init_DMA1(void)
+{
+
+		SIM_SCGC6 |= SIM_SCGC6_DMAMUX_MASK;
+		SIM_SCGC7 |= SIM_SCGC7_DMA_MASK;
+
+		DMAMUX0_CHCFG0 |= 0X00;
+		DMA_SAR0 = (uint32_t)src;
+		DMA_DAR0 = (uint32_t)dst;
+
+		DMA_DSR_BCR0 |= 0x20u;
+
+		DMA_DCR0 |= DMA_DCR_SSIZE(1) | DMA_DCR_DSIZE(1);
+		DMA_DCR0 |= DMA_DCR_SINC_MASK | DMA_DCR_DINC_MASK;
+
+		DMAMUX0_CHCFG0 |= 0x49u;
+		DMAMUX0_CHCFG0 |= DMAMUX_CHCFG_ENBL_MASK;
+		initialize_counter();
+		  counter_start();
+
+		  DMA_DCR0 |= DMA_DCR_START_MASK;
+
+		  counter_stop();
+
+		  cpu_ticks = TPM0->CNT;
+		  time_elapsed1= cpu_ticks*system_clock;
+
+
+ }

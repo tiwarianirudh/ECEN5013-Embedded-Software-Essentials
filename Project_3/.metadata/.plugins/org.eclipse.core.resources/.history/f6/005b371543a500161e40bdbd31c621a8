@@ -1,0 +1,117 @@
+/*
+ * messageint.c
+ *
+ *  Created on: Nov 4, 2016
+ *      Author: Mukund Madhusudan Atre
+ */
+#include "MKL25Z4.h"
+#include <stdint.h>
+#include <string.h>
+#include "rxtestled.h"
+#include "messageint.h"
+#include "uart.h"
+#include "pwm.h"
+
+//inptr = (uint8_t*) calloc(4 , sizeof(uint8_t));
+uint8_t datain[10];
+
+void Decode_CI_Msg()
+{
+uint8_t i,c = 0;
+
+while(i<4)
+{
+	c = UART0->D;
+	datain[i] = c;
+    i++;
+}
+pkt->command = datain[0];
+pkt->length = datain[1];
+pkt->data = datain[2];
+pkt->checksum = datain[3];
+}
+
+void cmd_action()
+{
+  if (pkt->command == RED_LED)
+  {
+	    if (pkt->data == LOW)
+	    {
+	      TPM2_BASE_PTR->CONTROLS[0].CnV = 150;
+	      TPM2_BASE_PTR->CONTROLS[1].CnV = 0;
+	      TPM0_BASE_PTR->CONTROLS[1].CnV = 0;
+	    }
+	    else if (pkt->data == MEDIUM)
+	    {
+	      TPM2_BASE_PTR->CONTROLS[0].CnV = 600;
+	      TPM2_BASE_PTR->CONTROLS[1].CnV = 0;
+	      TPM0_BASE_PTR->CONTROLS[1].CnV = 0;
+
+	    }
+	    else if (pkt->data == HIGH)
+	    {
+	      TPM2_BASE_PTR->CONTROLS[0].CnV = 900;
+	      TPM2_BASE_PTR->CONTROLS[1].CnV = 0;
+	      TPM0_BASE_PTR->CONTROLS[1].CnV = 0;
+
+	    }
+  }
+
+  else if (pkt->command == GREEN_LED)
+  {
+    if (pkt->data == LOW)
+    {
+      TPM2_BASE_PTR->CONTROLS[0].CnV = 150;
+      TPM2_BASE_PTR->CONTROLS[1].CnV = 0;
+      TPM0_BASE_PTR->CONTROLS[1].CnV = 0;
+    }
+    else if (pkt->data == MEDIUM)
+    {
+      TPM2_BASE_PTR->CONTROLS[0].CnV = 600;
+      TPM2_BASE_PTR->CONTROLS[1].CnV = 0;
+      TPM0_BASE_PTR->CONTROLS[1].CnV = 0;
+
+    }
+    else if (pkt->data == HIGH)
+    {
+      TPM2_BASE_PTR->CONTROLS[0].CnV = 900;
+      TPM2_BASE_PTR->CONTROLS[1].CnV = 0;
+      TPM0_BASE_PTR->CONTROLS[1].CnV = 0;
+
+    }
+  }
+    else if (pkt->command == BLUE_LED)
+    {
+        if (pkt->data == LOW)
+        {
+          TPM2_BASE_PTR->CONTROLS[0].CnV = 150;
+          TPM2_BASE_PTR->CONTROLS[1].CnV = 0;
+          TPM0_BASE_PTR->CONTROLS[1].CnV = 0;
+        }
+        else if (pkt->data == MEDIUM)
+        {
+          TPM2_BASE_PTR->CONTROLS[0].CnV = 600;
+          TPM2_BASE_PTR->CONTROLS[1].CnV = 0;
+          TPM0_BASE_PTR->CONTROLS[1].CnV = 0;
+
+        }
+        else if (pkt->data == HIGH)
+        {
+          TPM2_BASE_PTR->CONTROLS[0].CnV = 900;
+          TPM2_BASE_PTR->CONTROLS[1].CnV = 0;
+          TPM0_BASE_PTR->CONTROLS[1].CnV = 0;
+
+        }
+
+      else
+      {
+        send_string("Invalid data");
+      }
+
+    }
+
+  else
+  {
+    send_string("Invalid command");
+  }
+}

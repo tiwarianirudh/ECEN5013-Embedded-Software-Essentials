@@ -1,0 +1,17 @@
+/*
+ * dma.h
+ *
+ *  Created on: Nov 4, 2016
+ *      Author: aniru
+ */
+
+#ifndef INCLUDES_DMA_H_
+#define INCLUDES_DMA_H_
+
+//void init_DMA1(void);
+void dma8(uint8_t *src, uint8_t *dst, uint32_t len);
+void dma32(uint32_t * src, uint32_t * dst, uint32_t len);
+void memove_dma(void);
+void memzero_dma(void);
+
+#endif /* INCLUDES_DMA_H_ */

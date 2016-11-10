@@ -1,0 +1,113 @@
+#include<stdio.h>
+#include<stdint.h>
+#include<string.h>
+#include<stdlib.h>
+#include "cbuff.h"
+
+
+
+
+int buff_full()
+{
+  int i;
+  numitem_check();
+  if (struc_ptr->num_items == struc_ptr->length)
+  {
+  	(struc_ptr->state)=Full;
+    return 1;
+  }
+  else
+  {
+  	(struc_ptr->state)=Available;
+    return 0;
+  }
+
+}
+
+
+int buff_empty()
+{
+  int i;
+  numitem_check();
+  if (struc_ptr->num_items==0)
+  {
+  	(struc_ptr->state)=Empty;
+  	return 1;
+  }
+  else
+  {
+  	(struc_ptr->state)=Available;
+  	return 0;
+  }
+}
+
+
+void add_item(uint8_t item)
+{
+
+  if (struc_ptr->head<((struc_ptr->buffer)+((struc_ptr->length)-1)))
+  {
+  	*(struc_ptr->head)= item;
+  	(struc_ptr->head)++;
+	}
+  else if (struc_ptr->head == ((struc_ptr->buffer) + ((struc_ptr->length)-1)))
+  {
+  	*(struc_ptr->head) = item;
+  	struc_ptr->head = struc_ptr->buffer;
+  }
+  //printf("\nWritten data %c", item);
+  numitem_check();
+  //printf("\nNumber of items in buffer %d", struc_ptr->num_items);
+}
+
+
+uint8_t remove_item()
+{
+  uint8_t dataout;
+
+  if(struc_ptr->tail<((struc_ptr->buffer)+((struc_ptr->length)-1)))
+  {
+  	dataout = *(struc_ptr->tail);
+	*(struc_ptr->tail) = NULL;
+	(struc_ptr->tail)++;
+	//printf("Read Data: %c",dataout);
+  }
+  else if(struc_ptr->tail==((struc_ptr->buffer)+((struc_ptr->length)-1)))
+  {
+  	dataout = *(struc_ptr->tail);
+  	*(struc_ptr->tail) = NULL;
+  	struc_ptr->tail = struc_ptr->buffer;
+  	//printf("Read Data: %c",dataout);
+  }
+  numitem_check();
+  //printf("\nNumber of items in buffer %d", struc_ptr->num_items);
+  return dataout;
+}
+
+
+void numitem_check()
+{
+  int i;
+  struc_ptr->num_items = 0;
+  for (i=0;i<struc_ptr->length;++i)
+  {
+    if(*(struc_ptr->buffer + i)!=NULL)
+	{
+      (struc_ptr->num_items)++;
+	  }
+  }
+}
+
+void mem_allocate(uint8_t len)
+{
+  struc_ptr = (cb_t *) malloc(sizeof(cb_t));
+  buff_ptr = (uint8_t*) calloc(len , sizeof(uint8_t));
+
+}
+
+void mem_free()
+{
+  free(struc_ptr);
+  free(buff_ptr);
+}
+

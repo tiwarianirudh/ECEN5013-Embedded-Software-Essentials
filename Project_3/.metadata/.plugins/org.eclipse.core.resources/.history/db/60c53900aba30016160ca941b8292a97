@@ -1,0 +1,24 @@
+/*
+ * messageint.h
+ *
+ *  Created on: Nov 4, 2016
+ *      Author: mmsat
+ */
+#include <stdint.h>
+#ifndef INCLUDES_MESSAGEINT_H_
+#define INCLUDES_MESSAGEINT_H_
+#define MAX_DATA_SIZE 0x08
+
+typedef struct CI_Msg_t{
+	cmds_t command;
+	uint8_t length;
+	uint8_t data[MAX_DATA_SIZE];
+	uint16_t checksum;
+}CI_Msg;
+
+typedef enum checksum{
+	PASS,
+	FAIL
+};
+
+#endif

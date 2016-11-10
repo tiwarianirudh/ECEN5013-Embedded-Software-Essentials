@@ -1,0 +1,13 @@
+/*
+ * dma.h
+ *
+ *  Created on: Nov 4, 2016
+ *      Author: aniru
+ */
+
+#ifndef INCLUDES_DMA_H_
+#define INCLUDES_DMA_H_
+
+void init_DMA1(void);
+
+#endif /* INCLUDES_DMA_H_ */

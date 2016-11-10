@@ -1,6 +1,32 @@
-21:19:29 **** Incremental Build of configuration Debug for project project_3 ****
+<<<<<<< HEAD
+21:28:03 **** Incremental Build of configuration Debug for project project_3 ****
+=======
+20:26:37 **** Incremental Build of configuration Debug for project project_3 ****
+>>>>>>> 77841ff9f62611b1982f0e272250d2d7396c48ae
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../Sources/nRF24L01.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/nRF24L01.d" -MT"Sources/nRF24L01.o" -c -o "Sources/nRF24L01.o" "../Sources/nRF24L01.c"
+../Sources/nRF24L01.c: In function 'write_reg':
+../Sources/nRF24L01.c:25:2: warning: implicit declaration of function 'SPI_transfer' [-Wimplicit-function-declaration]
+  status = SPI_transfer(W_REGISTER | ( REGISTER_MASK & reg ));
+  ^
+Finished building: ../Sources/nRF24L01.c
+ 
+Building file: ../Sources/spi.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/spi.d" -MT"Sources/spi.o" -c -o "Sources/spi.o" "../Sources/spi.c"
+Finished building: ../Sources/spi.c
+ 
+Building target: project_3.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"C:/Users/aniru/Desktop/Project_3/project_3/Project_Settings/Linker_Files" -Wl,-Map,"project_3.map" -specs=nano.specs -specs=nosys.specs -o "project_3.elf"  ./Sources/dma.o ./Sources/main.o ./Sources/nRF24L01.o ./Sources/profiler.o ./Sources/spi.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
+Finished building target: project_3.elf
+ 
 
-21:19:29 Build Finished (took 136ms)
+<<<<<<< HEAD
+21:28:04 Build Finished (took 234ms)
+=======
+20:26:38 Build Finished (took 686ms)
+>>>>>>> 77841ff9f62611b1982f0e272250d2d7396c48ae
 

@@ -1,0 +1,12 @@
+//header file for UART
+#ifndef __UART_H_
+#define __UART_H_
+void UART0_init(void);
+void delaysMs(int n);
+void UART0_tx(void);
+void UART0_rx();
+void send_char(char c);
+void send_string(char s[]);
+void delayMs(int n);
+
+#endif

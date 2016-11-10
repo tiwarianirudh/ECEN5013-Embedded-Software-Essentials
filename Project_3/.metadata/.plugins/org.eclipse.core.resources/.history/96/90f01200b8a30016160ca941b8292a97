@@ -1,0 +1,35 @@
+/*
+ * messageint.h
+ *
+ *  Created on: Nov 4, 2016
+ *      Author: mmsat
+ */
+
+#ifndef INCLUDES_MESSAGEINT_H_
+#define INCLUDES_MESSAGEINT_H_
+#define MAX_DATA_SIZE 0x08
+#include <stdint.h>
+typedef struct CI_Msg{
+	cmds_t command;
+	uint8_t length;
+	uint8_t data[MAX_DATA_SIZE];
+	uint16_t checksum;
+} *CI_Msg_t;
+
+/*typedef enum checksum{
+	PASS,
+	FAIL
+};*/
+
+typedef enum ledcolor{
+	RED_LED = 0x01,
+	GREEN_LED = 0x02,
+	BLUE_LED = 0x03,
+}color;
+
+typedef enum ledbright{
+	LOW = 0x01,
+	MEDIUM = 0x02,
+	HIGH = 0x03,
+}brightness;
+#endif

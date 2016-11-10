@@ -1,0 +1,62 @@
+//Program for testing receiver through RGB LED
+#include "MKL25Z4.h"
+#include "rxtestled.h"
+
+void UART0_init(void);
+void delayMs(int n);
+void LED_init(void);
+void LED_set(char value);
+
+void UART0_IRQHandler()
+{
+	uint8_t c;
+	c = UART0->D;
+	LED_set(c);
+	//send_char(c);
+}
+
+
+void LED_init()
+{
+	SIM->SCGC5 |= 0x400;
+	SIM->SCGC5 |= 0x1000;
+	PORTB->PCR[18] = 0x100;
+	PTB->PDDR |= 0x40000;
+	PTB->PSOR |= 0x40000;
+	PORTB->PCR[19] = 0x100;
+	PTB->PDDR |= 0x80000;
+	PTB->PSOR |= 0x80000;
+	PORTD->PCR[1]=0x100;
+	PTD->PDDR |= 0x02;
+	PTD->PSOR |= 0x02;
+
+}
+
+
+void LED_set(char value)
+{
+	if(value == 'R')
+	PTB->PCOR = 0x40000;
+	else
+	PTB->PSOR = 0x40000;
+
+	if(value == 'G')
+	PTB->PCOR = 0x80000;
+	else
+	PTB->PSOR = 0x80000;
+
+	if(value == 'B')
+	PTD->PCOR = 0x02;
+	else
+	PTD->PSOR = 0x02;
+}
+
+void delayMs(int n)
+{
+	int i;
+	int j;
+	for (i=0;i<n;i++)
+	for (j=0;j<n;j++)
+	{
+	}
+}

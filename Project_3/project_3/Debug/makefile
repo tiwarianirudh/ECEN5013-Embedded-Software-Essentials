@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include Sources/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
+-include .metadata/.plugins/org.eclipse.cdt.make.core/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -51,7 +52,7 @@ all: project_3.elf secondary-outputs
 project_3.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross ARM C++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"C:/Users/aniru/Desktop/Project_3/project_3/Project_Settings/Linker_Files" -Wl,-Map,"project_3.map" -specs=nano.specs -specs=nosys.specs -o "project_3.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"C:/Users/mmsat/OneDrive/Documents/ubuntushare/anirudhrepo/Project_3/project_3/Project_Settings/Linker_Files" -Wl,-Map,"project_3.map" -specs=nano.specs -specs=nosys.specs -o "project_3.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
