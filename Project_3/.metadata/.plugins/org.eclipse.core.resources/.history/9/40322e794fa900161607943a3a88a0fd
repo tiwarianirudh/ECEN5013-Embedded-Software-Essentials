@@ -29,20 +29,63 @@
  */
 
 #include "MKL25Z4.h"
+<<<<<<< HEAD
 #include <stdio.h>
 #include <stdint.h>
-
+#include "messageint.h"
+#include "uart.h"
+#include "pwm.h"
+#define MESSAGE
 void init_DMA1(void);
+CI_Msg_t message;
+void main()
+{
+
+
+#ifdef MESSAGE
+UART0_init();
+LED_in();
+cbuff_init(&txbuffer, 20);
+cbuff_init(&rxbuffer, 20);
+empty_buff(&rxbuffer);
+while(1){
+			__asm("cpsid i");
+			message_map(&message);
+			__asm("cpsie i");
+			Decode_CI_Msg(&message);
+=======
+#include "dma.h"
+#include "profiler.h"
 
 void main()
 {
- init_DMA1(void);
-}
+  //unsigned char src[10] = {0,1,2,3,4,5,6,7,8,9};
+  //unsigned char dst[10] = {1,0,0,0,0,0,0,0,0,0};
+  //uint32_t len=10;
 
+  //init_DMA1();
+  //__enable_irq();
+  //memmove_dma();
+  memzero_dma();
+>>>>>>> 77841ff9f62611b1982f0e272250d2d7396c48ae
+}
+#endif
+
+<<<<<<< HEAD
+#ifdef DMA
+ init_DMA1();
+#endif
+
+}
+#ifdef DMA
 void init_DMA1(void)
 {
 	unsigned char src[10] = {0,1,2,3,4,5,6,7,8,9};
 	unsigned char dst[10] = {1,0,0,0,0,0,0,0,0,0};
+
+	double system_clock= 0.047;
+	double time_elapsed1;
+	double cpu_ticks;
 
 		SIM_SCGC6 |= SIM_SCGC6_DMAMUX_MASK;
 		SIM_SCGC7 |= SIM_SCGC7_DMA_MASK;
@@ -58,7 +101,23 @@ void init_DMA1(void)
 
 		DMAMUX0_CHCFG0 |= 0x49u;
 		DMAMUX0_CHCFG0 |= DMAMUX_CHCFG_ENBL_MASK;
+		initialize_counter();
+		counter_start();
 
 		DMA_DCR0 |= DMA_DCR_START_MASK;
 
-}
+		counter_stop();
+
+		cpu_ticks = TPM0->CNT;
+		time_elapsed1= cpu_ticks*system_clock;
+
+
+ }
+#endif
+
+=======
+
+
+
+
+>>>>>>> 77841ff9f62611b1982f0e272250d2d7396c48ae

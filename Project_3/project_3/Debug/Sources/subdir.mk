@@ -5,8 +5,10 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Sources/cbuff.c \
+../Sources/dma.c \
 ../Sources/main.c \
 ../Sources/messageint.c \
+../Sources/nRF24L01.c \
 ../Sources/profiler.c \
 ../Sources/pwm.c \
 ../Sources/spi.c \
@@ -14,8 +16,10 @@ C_SRCS += \
 
 OBJS += \
 ./Sources/cbuff.o \
+./Sources/dma.o \
 ./Sources/main.o \
 ./Sources/messageint.o \
+./Sources/nRF24L01.o \
 ./Sources/profiler.o \
 ./Sources/pwm.o \
 ./Sources/spi.o \
@@ -23,8 +27,10 @@ OBJS += \
 
 C_DEPS += \
 ./Sources/cbuff.d \
+./Sources/dma.d \
 ./Sources/main.d \
 ./Sources/messageint.d \
+./Sources/nRF24L01.d \
 ./Sources/profiler.d \
 ./Sources/pwm.d \
 ./Sources/spi.d \

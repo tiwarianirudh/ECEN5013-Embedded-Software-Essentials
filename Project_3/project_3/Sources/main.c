@@ -29,18 +29,19 @@
  */
 
 #include "MKL25Z4.h"
-<<<<<<< HEAD
 #include <stdio.h>
 #include <stdint.h>
 #include "messageint.h"
 #include "uart.h"
 #include "pwm.h"
+#include "dma.h"
+#include "profiler.h"
+
 #define MESSAGE
 void init_DMA1(void);
 CI_Msg_t message;
 void main()
 {
-
 
 #ifdef MESSAGE
 UART0_init();
@@ -53,30 +54,22 @@ while(1){
 			message_map(&message);
 			__asm("cpsie i");
 			Decode_CI_Msg(&message);
-=======
-#include "dma.h"
-#include "profiler.h"
-
-void main()
-{
-  //unsigned char src[10] = {0,1,2,3,4,5,6,7,8,9};
-  //unsigned char dst[10] = {1,0,0,0,0,0,0,0,0,0};
-  //uint32_t len=10;
-
-  //init_DMA1();
-  //__enable_irq();
-  //memmove_dma();
-  memzero_dma();
->>>>>>> 77841ff9f62611b1982f0e272250d2d7396c48ae
 }
+
 #endif
 
-<<<<<<< HEAD
 #ifdef DMA
- init_DMA1();
-#endif
+ //unsigned char src[10] = {0,1,2,3,4,5,6,7,8,9};
+ //unsigned char dst[10] = {1,0,0,0,0,0,0,0,0,0};
+ //uint32_t len=10;
 
+ //init_DMA1();
+ //__enable_irq();
+ //memmove_dma();
+ //memzero_dma();
+#endif
 }
+
 #ifdef DMA
 void init_DMA1(void)
 {
@@ -114,10 +107,3 @@ void init_DMA1(void)
 
  }
 #endif
-
-=======
-
-
-
-
->>>>>>> 77841ff9f62611b1982f0e272250d2d7396c48ae

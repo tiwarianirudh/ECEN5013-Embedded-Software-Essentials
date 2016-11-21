@@ -1,51 +1,17 @@
-<<<<<<< HEAD
-21:11:43 **** Incremental Build of configuration Debug for project project_3 ****
-=======
-20:26:37 **** Incremental Build of configuration Debug for project project_3 ****
->>>>>>> 77841ff9f62611b1982f0e272250d2d7396c48ae
+20:23:31 **** Incremental Build of configuration Debug for project project_3 ****
 make all 
-Building file: ../Sources/nRF24L01.c
+Building file: ../Sources/cbuff.c
 Invoking: Cross ARM C Compiler
-<<<<<<< HEAD
-arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-Finished building: ../Sources/main.c
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/cbuff.d" -MT"Sources/cbuff.o" -c -o "Sources/cbuff.o" "../Sources/cbuff.c"
+Finished building: ../Sources/cbuff.c
  
-Building target: project_3.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"C:/Users/mmsat/OneDrive/Documents/ubuntushare/anirudhrepo/Project_3/project_3/Project_Settings/Linker_Files" -Wl,-Map,"project_3.map" -specs=nano.specs -specs=nosys.specs -o "project_3.elf"  ./Sources/cbuff.o ./Sources/main.o ./Sources/messageint.o ./Sources/profiler.o ./Sources/pwm.o ./Sources/spi.o ./Sources/uart.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   
-Finished building target: project_3.elf
- 
-21:11:48 **** Incremental Build of configuration Debug for project project_3 ****
-make all 
-make: Nothing to be done for 'all'.
-21:14:12 **** Incremental Build of configuration Debug for project project_3 ****
-make all 
-make: Nothing to be done for 'all'.
-21:14:38 **** Incremental Build of configuration Debug for project project_3 ****
-make all 
-make: Nothing to be done for 'all'.
-21:17:57 **** Incremental Build of configuration Debug for project project_3 ****
-make all 
-make: Nothing to be done for 'all'.
-21:23:45 **** Incremental Build of configuration Debug for project project_3 ****
-make all 
 Building file: ../Sources/main.c
 Invoking: Cross ARM C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
 Finished building: ../Sources/main.c
  
-Building target: project_3.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"C:/Users/mmsat/OneDrive/Documents/ubuntushare/anirudhrepo/Project_3/project_3/Project_Settings/Linker_Files" -Wl,-Map,"project_3.map" -specs=nano.specs -specs=nosys.specs -o "project_3.elf"  ./Sources/cbuff.o ./Sources/main.o ./Sources/messageint.o ./Sources/profiler.o ./Sources/pwm.o ./Sources/spi.o ./Sources/uart.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   
-Finished building target: project_3.elf
- 
-21:25:29 **** Incremental Build of configuration Debug for project project_3 ****
-make all 
-make: Nothing to be done for 'all'.
-21:28:03 **** Incremental Build of configuration Debug for project project_3 ****
-make all 
-make: Nothing to be done for 'all'.
-=======
+Building file: ../Sources/nRF24L01.c
+Invoking: Cross ARM C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/nRF24L01.d" -MT"Sources/nRF24L01.o" -c -o "Sources/nRF24L01.o" "../Sources/nRF24L01.c"
 ../Sources/nRF24L01.c: In function 'write_reg':
 ../Sources/nRF24L01.c:25:2: warning: implicit declaration of function 'SPI_transfer' [-Wimplicit-function-declaration]
@@ -60,7 +26,12 @@ Finished building: ../Sources/spi.c
  
 Building target: project_3.elf
 Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"C:/Users/aniru/Desktop/Project_3/project_3/Project_Settings/Linker_Files" -Wl,-Map,"project_3.map" -specs=nano.specs -specs=nosys.specs -o "project_3.elf"  ./Sources/dma.o ./Sources/main.o ./Sources/nRF24L01.o ./Sources/profiler.o ./Sources/spi.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"C:/Users/mmsat/OneDrive/Documents/ubuntushare/anirudhrepo/Project_3/project_3/Project_Settings/Linker_Files" -Wl,-Map,"project_3.map" -specs=nano.specs -specs=nosys.specs -o "project_3.elf"  ./Sources/cbuff.o ./Sources/dma.o ./Sources/main.o ./Sources/messageint.o ./Sources/nRF24L01.o ./Sources/profiler.o ./Sources/pwm.o ./Sources/spi.o ./Sources/uart.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o   
 Finished building target: project_3.elf
  
->>>>>>> 77841ff9f62611b1982f0e272250d2d7396c48ae
+20:37:21 **** Incremental Build of configuration Debug for project project_3 ****
+make all 
+make: Nothing to be done for 'all'.
+20:38:13 **** Incremental Build of configuration Debug for project project_3 ****
+make all 
+make: Nothing to be done for 'all'.
