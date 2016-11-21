@@ -59,14 +59,14 @@ while(1){
 #endif
 
 #ifdef DMA
- //unsigned char src[10] = {0,1,2,3,4,5,6,7,8,9};
- //unsigned char dst[10] = {1,0,0,0,0,0,0,0,0,0};
- //uint32_t len=10;
+ unsigned char src[10] = {0,1,2,3,4,5,6,7,8,9};
+ unsigned char dst[10] = {1,0,0,0,0,0,0,0,0,0};
+ uint32_t len=10;
 
- //init_DMA1();
- //__enable_irq();
- //memmove_dma();
- //memzero_dma();
+ init_DMA1();
+ __enable_irq();
+ memmove_dma();
+ memzero_dma();
 #endif
 }
 
