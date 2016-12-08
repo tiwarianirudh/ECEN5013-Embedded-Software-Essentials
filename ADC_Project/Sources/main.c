@@ -34,13 +34,12 @@
 #include "ADC.h"
 #include "UART.h"
 #include "LED.h"
-//#include "TSI.h"
+#include "TSI.h"
 //#include "I2C.h"
 //#include "TSL2561.h"
-//#define TOUCH
+#define TOUCH
 //#define LIGHT
 #define TEMPERATURE
-//CI_Msg msg;
 
 int main(void)
 {
