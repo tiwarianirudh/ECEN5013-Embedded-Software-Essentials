@@ -57,11 +57,11 @@ cbuff_init(&rxbuffer, 20);
 }*/
 
 while(1){
-	if(rxbuffer.num_items == 5){
+	if(rx_buff .num_items == 5){
 		__asm("cpsid i");
-		message_map(&message);
+		message_map(&msg);
 		__asm("cpsie i");
-		Decode_CI_Msg(&message);
+		Decode_CI_Msg(&msg);
 	}
 }
 return 0;

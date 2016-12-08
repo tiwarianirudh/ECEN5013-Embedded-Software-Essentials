@@ -21,6 +21,7 @@ void UART0_init(void){
 	UART0_C2_REG(UART0_BASE_PTR) &= ~(UART_C2_TE_MASK | UART_C2_RE_MASK); // Switch off UART before setting
 	UART0_C1_REG(UART0_BASE_PTR)=0x00; //Set all default configuration
 
+	//SBR calculation
 
 	sbr= (uint16_t)(DEFAULT_SYSTEM_CLOCK/(BAUD *16));
 
